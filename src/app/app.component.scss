@@ -1,0 +1,9 @@
+.app-main {
+  display: flex;
+  justify-content: center;
+
+  >div {
+    display: flex;
+    flex-direction: column;
+  }
+}
