@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { ChatComponent } from './chat/chat.component';
-import { InputComponent } from './input/input.component';
+import { ChatComponent } from './components/chat/chat.component';
+import { InputComponent } from './components/input/input.component';
 
 @NgModule({
   declarations: [
