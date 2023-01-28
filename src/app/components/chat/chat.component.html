@@ -1,1 +1,4 @@
 <p>chat works!</p>
+<div *ngFor="let message of allMessages$ | async">
+  {{ message }}
+</div>
