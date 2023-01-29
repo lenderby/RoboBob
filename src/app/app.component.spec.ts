@@ -1,13 +1,24 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import {ChatComponent} from "./components/chat/chat.component";
+import {InputComponent} from "./components/input/input.component";
+import { provideMockStore, MockStore } from '@ngrx/store/testing';
 
 describe('AppComponent', () => {
+  let store: MockStore;
+  const initialState = {};
+
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent, ChatComponent, InputComponent
       ],
+      providers: [
+        provideMockStore({ initialState })
+      ]
     }).compileComponents();
+
+    store = TestBed.inject(MockStore);
   });
 
   it('should create the app', () => {
@@ -16,16 +27,4 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'RoboBob'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('RoboBob');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('RoboBob app is running!');
-  });
 });
