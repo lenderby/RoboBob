@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from "@ngrx/store";
-import {addMessage} from "../../state/messages/messages.actions";
+import {addQuestion} from "../../state/messages/messages.actions";
 import {FormBuilder, FormGroup} from "@angular/forms";
 
 @Component({
@@ -19,13 +19,12 @@ export class InputComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.store.dispatch(addMessage({message: 'something'}));
   }
 
   onSubmit() {
     if (this.form.valid) {
       console.log(this.form.value);
-      this.store.dispatch(addMessage(this.form.value));
+      this.store.dispatch(addQuestion(this.form.value));
       this.form.reset();
     }
   }

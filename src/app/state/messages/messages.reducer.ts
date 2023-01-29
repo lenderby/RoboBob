@@ -1,5 +1,5 @@
 import { createReducer, on } from '@ngrx/store';
-import { addMessage } from "./messages.actions";
+import {addAnswer, addMessage, addQuestion} from "./messages.actions";
 
 export interface MessagesState {
   messages: string[];
@@ -14,6 +14,20 @@ export const initialState: MessagesState = {
 export const messagesReducer = createReducer(
   initialState,
   on(addMessage, (state, { message }) => {
+    return {
+      ...state,
+      messages: [...state.messages, message],
+      count: state.count + 1
+    };
+  }),
+  on(addQuestion, (state, { message }) => {
+    return {
+      ...state,
+      messages: [...state.messages, message],
+      count: state.count + 1
+    };
+  }),
+  on(addAnswer, (state, { message }) => {
     return {
       ...state,
       messages: [...state.messages, message],
