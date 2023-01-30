@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from "@ngrx/store";
 import {addQuestion} from "../../state/messages/messages.actions";
-import {FormBuilder, FormGroup} from "@angular/forms";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-input',
@@ -14,7 +14,7 @@ export class InputComponent implements OnInit {
 
   constructor( private store: Store, private formBuilder: FormBuilder ) {
     this.form = this.formBuilder.group({
-      message: ['']
+      message: ['', Validators.required]
     });
   }
 

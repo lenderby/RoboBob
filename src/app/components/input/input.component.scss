@@ -1,0 +1,30 @@
+@import '_variables';
+
+.form-container {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  //box-shadow: 0px 0px 10px #ccc;
+}
+
+form {
+  position: relative;
+}
+
+button.submit-form {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  border: none;
+  cursor: pointer;
+  background: transparent;
+  color: $white;
+  border-radius: 5px;
+  &:hover {
+    background: $primary-color;
+  }
+}
