@@ -1,8 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { Store, StoreModule } from "@ngrx/store";
 import { addQuestion } from "../../state/messages/messages.actions";
-import { FormBuilder, FormGroup } from "@angular/forms";
+import {FormBuilder, FormGroup} from "@angular/forms";
 import { InputComponent } from './input.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 describe('InputComponent', () => {
   let component: InputComponent;
@@ -14,7 +15,7 @@ describe('InputComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [InputComponent],
-      imports: [StoreModule.forRoot({})],
+      imports: [StoreModule.forRoot({}), ReactiveFormsModule],
       providers: [
         Store,
         FormBuilder
