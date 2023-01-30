@@ -26,4 +26,8 @@ describe('ChatComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should have a welcome message', () => {
+    expect(component.welcomeMessage).toBeDefined();
+  });
 });
