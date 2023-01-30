@@ -2,9 +2,9 @@ import { Injectable } from '@angular/core';
 import { Actions, ofType, createEffect } from '@ngrx/effects';
 import { map, tap } from 'rxjs/operators';
 import {addAnswer, addQuestion} from './messages.actions';
-import {answerGreeting, evaluateExpression} from "../../utils/message.util";
+import {answerGreeting, answerQuestionAboutRoboBob, evaluateExpression} from "../../utils/message.util";
 
-const messageUtils = [evaluateExpression, answerGreeting];
+const messageUtils = [evaluateExpression, answerGreeting, answerQuestionAboutRoboBob];
 
 const findAnswer = (message: string) => {
   for (const method of messageUtils) {
@@ -13,7 +13,7 @@ const findAnswer = (message: string) => {
       return result.toString();
     }
   }
-  return "I'm sorry I don't understand";
+  return "I'm sorry I don't understand"; // question doesn't match any of the methods
 }
 
 @Injectable()
