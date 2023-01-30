@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Store } from "@ngrx/store";
 import {addQuestion} from "../../state/messages/messages.actions";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
@@ -8,7 +8,7 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
   templateUrl: './input.component.html',
   styleUrls: ['./input.component.scss']
 })
-export class InputComponent implements OnInit {
+export class InputComponent {
 
   public form: FormGroup;
 
@@ -16,9 +16,6 @@ export class InputComponent implements OnInit {
     this.form = this.formBuilder.group({
       message: ['', Validators.required]
     });
-  }
-
-  ngOnInit() {
   }
 
   onSubmit() {
